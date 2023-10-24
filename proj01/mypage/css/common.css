@@ -34,6 +34,7 @@ header {
 
 header ul {
   float: right;
+  margin-top: 20px;
 }
 
 header ul li {
@@ -49,11 +50,11 @@ header ul li {
 
 section.main {
   text-align: center;
+  position: relative;
 }
 
 section.main > * {
   margin-bottom: 20px;
-  position: relative;
 }
 
 secion.main h2 {

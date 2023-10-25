@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event</title>
+  </head>
+  <body>
+    <script>
+      function makeColor() {
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+
+        return `rgb(${r},${g},${b})`;
+      }
+      function changeColor() {
+        document.body.style.backgroundColor = makeColor();
+
+        document.removeEventListener("click", changeColor);
+      }
+      document.addEventListener("click", changeColor);
+
+      document.addEventListener("click", () => {
+        console.log("hello");
+      });
+    </script>
+  </body>
+</html>

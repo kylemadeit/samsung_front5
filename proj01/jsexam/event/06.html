@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event exam6</title>
+  </head>
+  <body>
+    <form action="05.html" id="form1">
+      이름 : <input type="text" name="name" id="name" /><br />
+      비밀번호 : <input type="password" name="password" id="password" /><br />
+      비밀번호확인 : <input type="password" id="checkPassword" /><br />
+      <input type="submit" value="등록" />
+    </form>
+
+    <script>
+      const checkValue = (e) => {
+        console.log(document.getElementById("name"));
+        const name = document.getElementById("name").value;
+        const password = document.getElementById("password").value;
+        const checkPassword = document.getElementById("checkPassword").value;
+        if (name === "") {
+          alert("이름을 반드시 입력하세요.");
+          e.preventDefault();
+          return;
+        }
+        if (password != checkPassword) {
+          alert("비밀번호는 동일해야하니다. 다시 확인하세요.");
+        }
+      };
+
+      //   document.getElementById("form1").addEventListener("submit", checkValue);
+      document.getElementById("form1").onsubmit = checkValue;
+    </script>
+  </body>
+</html>

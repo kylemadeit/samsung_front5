@@ -1,5 +1,10 @@
-const Hello = ({ color, name }) => {
-  return <div style={{ color }}>안녕하세요. {name}</div>;
+const Hello = ({ color, name, isSpecial }) => {
+  return (
+    <div style={{ color }}>
+      {isSpecial && <b>*</b>}
+      안녕하세요. {name}
+    </div>
+  );
 };
 
 Hello.defaultProps = {

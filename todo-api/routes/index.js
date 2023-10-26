@@ -64,4 +64,12 @@ router.patch("/api/todos", function (req, res) {
 
   res.status(200).json({ result: "ok" });
 });
+
+router.delete("/api/todos/:id", function (req, res) {
+  const id = parseInt(req.params.id);
+  todos = todos.filter((todo) => todo.id !== id);
+
+  res.status(200).json(todos);
+});
+
 module.exports = router;

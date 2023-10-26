@@ -43,4 +43,25 @@ router.post("/api/todos", function (req, res) {
   todos.unshift(todo);
   res.status(200).json(todo);
 });
+
+router.patch("/api/todos/:id", function (req, res) {
+  const id = parseInt(req.params.id);
+  const todo = todos.find((todo) => todo.id === id);
+  todo.done = !todo.done;
+
+  res.status(200).json(todos);
+});
+
+router.patch("/api/todos", function (req, res) {
+  const id = req.body.id;
+  const title = req.body.title;
+
+  todos.map((todo) => {
+    if (todo.id === id) {
+      todo.title = title;
+    }
+  });
+
+  res.status(200).json({ result: "ok" });
+});
 module.exports = router;

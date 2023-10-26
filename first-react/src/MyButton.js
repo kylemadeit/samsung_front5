@@ -14,4 +14,7 @@ const MyButton = ({ clickHandler, title }) => {
   );
 };
 
+MyButton.defaultProps = {
+  title: "이름없음",
+};
 export default MyButton;

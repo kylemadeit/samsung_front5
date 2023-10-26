@@ -24,6 +24,7 @@ const Counter = () => {
       <input type="button" value="-" onClick={minusHandler} /> */}
       <MyButton title="+" clickHandler={plusHandler} />
       <MyButton title="-" clickHandler={minusHandler} />
+      <MyButton />
     </div>
   );
 };

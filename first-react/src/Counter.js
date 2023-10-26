@@ -1,4 +1,5 @@
 import { useState } from "react";
+import MyButton from "./MyButton";
 
 const Counter = () => {
   console.log("Counter run 👌👌👌");
@@ -19,8 +20,10 @@ const Counter = () => {
   return (
     <div>
       <h2>{count}</h2>
-      <input type="button" value="+" onClick={plusHandler} />
-      <input type="button" value="-" onClick={minusHandler} />
+      {/* <input type="button" value="+" onClick={plusHandler} />
+      <input type="button" value="-" onClick={minusHandler} /> */}
+      <MyButton title="+" clickHandler={plusHandler} />
+      <MyButton title="-" clickHandler={minusHandler} />
     </div>
   );
 };

@@ -1,8 +1,10 @@
+import BoardList from "./BoardList";
 import Counter from "./Counter";
 import Hello from "./Hello";
 import MyInputBox from "./MyInputBox";
 import TitlePriceInputBox from "./TitlePriceInputBox";
 import ChildrenExam from "./component/propsChildren/ChildrenExam";
+import UseRefExam from "./component/useRef/UseRefExam";
 import UseStateExam1 from "./component/useState/UseStateExam1";
 import UseStateExam2 from "./component/useState/UseStateExam2";
 import UseStateExam3 from "./component/useState/UseStateExam3";
@@ -22,7 +24,9 @@ function App() {
       {/* <UseStateExam2 /> */}
       {/* <UseStateExam3 /> */}
       {/* <MyInputBox /> */}
-      <TitlePriceInputBox />
+      {/* <TitlePriceInputBox /> */}
+      {/* <UseRefExam /> */}
+      <BoardList />
     </div>
   );
 }

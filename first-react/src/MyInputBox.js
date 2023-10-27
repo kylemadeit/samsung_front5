@@ -1,15 +1,19 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import MyButton from "./MyButton";
 
 const MyInputBox = () => {
   console.log("MyInputBox run!!  👌👌");
   const [text, setText] = useState("기본값");
 
+  const inputRef = useRef();
+
   const changeHandler = (e) => {
-    setText(e.target.value);
+    console.log(inputRef.current.value);
+    setText(inputRef.current.value);
   };
 
   const resetHandler = () => {
+    inputRef.current.focus();
     setText("");
   };
 
@@ -17,7 +21,7 @@ const MyInputBox = () => {
     <div>
       <label>{text}</label>
       <br />
-      <input type="text" value={text} onChange={changeHandler} />
+      <input type="text" value={text} onChange={changeHandler} ref={inputRef} />
       <MyButton clickHandler={resetHandler} title="RESET" />
     </div>
   );
